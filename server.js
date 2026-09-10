@@ -17,8 +17,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "food-delivery-web-logic-lords.vercel.app",
-      "food-delivery-web-olive-eight.vercel.app",
+      "https://food-delivery-web-logic-lords.vercel.app",
+      "https://food-delivery-web-olive-eight.vercel.app",
     ],
   }),
 );
