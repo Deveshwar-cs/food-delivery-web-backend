@@ -13,7 +13,14 @@ const app = express();
 const port = 5000;
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "food-delivery-web-logic-lords.vercel.app",
+    ],
+  }),
+);
 
 app.use("/api/food", foodRouter);
 app.use("/images", express.static("uploads"));
