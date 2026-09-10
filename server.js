@@ -18,6 +18,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "food-delivery-web-logic-lords.vercel.app",
+      "food-delivery-web-olive-eight.vercel.app",
     ],
   }),
 );
