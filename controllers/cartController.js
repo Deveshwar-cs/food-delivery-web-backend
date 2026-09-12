@@ -22,7 +22,6 @@ export const addToCart = async (req, res) => {
 export const removeFromCart = async (req, res) => {
   try {
     let userData = await userModel.findById(req.user);
-    console.log(userData);
     let cartData = userData.cartData;
     if (cartData[req.body.itemId] > 0) {
       cartData[req.body.itemId] -= 1;

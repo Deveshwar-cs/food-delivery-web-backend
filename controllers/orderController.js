@@ -1,6 +1,7 @@
 import orderModel from "../models/orderModel.js";
 import razorpay from "../config/razorpay.js";
 import crypto from "crypto";
+import userModel from "../models/userModel.js";
 
 // ========================================
 // PLACE ORDER
@@ -200,6 +201,10 @@ export const verifyPayment = async (req, res) => {
     await order.save();
 
     console.log("PAYMENT SUCCESSFULLY UPDATED");
+    const user = await userModel.findByIdAndUpdate(
+      {_id: req.user},
+      {cartData: {}},
+    );
 
     // ----------------------------------------
     // Send response
